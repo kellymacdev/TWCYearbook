@@ -96,7 +96,7 @@
     <div class="extras">
     {% if graduate.q9 %}
         <h2>Your song of the moment:</h2>
-        {% if song_description is not None %}
+        {% if song_description %}
             <p>🎶 {{ song.description }} 🎶</p>
         {% else %}
         <div class="song">
