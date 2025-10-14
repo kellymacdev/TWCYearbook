@@ -1,5 +1,4 @@
-import gspread
-from google.oauth2.service_account import Credentials
+
 from django.core.management.base import BaseCommand
 from network.models import Graduate  # change to your model path
 import csv
@@ -30,7 +29,8 @@ COLUMN_MAPPING = {
             "Are you married?": 'married',
             "Had any babies?": 'babies',
             "For Zaza": 'for_zaza',
-            "For Linda": 'for_linda'
+            "For Linda": 'for_linda',
+            "Spotify": 'spotify'
         }
 
 
@@ -38,7 +38,7 @@ class Command(BaseCommand):
     help = 'Import students and their answers from Google Sheet'
 
     def handle(self, *args, **kwargs):
-        with open('graduates.csv', newline='', encoding='utf-8') as f:
+        with open('/Users/kellymacdevette/Dropbox/2025/WebDev/TWC2025/project4/data/graduates.csv', newline='', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
                 graduate_data = {}

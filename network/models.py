@@ -52,17 +52,8 @@ class Graduate(models.Model):
     babies = models.IntegerField(blank=True, null=True)
     for_zaza = models.TextField(blank=True, null=True)
     for_linda = models.TextField(blank=True, null=True)
+    spotify = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.name
-
-
-class Song(models.Model):
-    name = models.ForeignKey(Graduate, on_delete=models.CASCADE, related_name='song')
-    title = models.TextField(blank=True, null=True)
-    artist = models.TextField(blank=True, null=True)
-    spotify = models.TextField(blank=True, null=True)
-    description = models.TextField(blank=True, null=True)
-
-
 

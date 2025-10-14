@@ -10,7 +10,7 @@ import os
 from django.conf import settings
 
 
-from .models import User, Post, Graduate, Song
+from .models import User, Post, Graduate
 
 
 def index(request):
@@ -84,13 +84,20 @@ def profile(request, grad_id):
     folder_path = os.path.join(settings.BASE_DIR, 'network', 'static', 'photos', f'{gradname}')
     files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
     file_urls = [f'photos/{gradname}/{f}' for f in files]
-    try:
-        song = grad.song.get()
-    except Song.DoesNotExist:
+    if grad.q9:
+        if grad.spotify:
+            song = grad.spotify
+            song_description = None
+        else:
+            song_description = grad.q9
+            song = None
+    else:
         song = None
+        song_description = None
     return render(request, "network/profile.html", {
         "graduate": grad,
         "song": song,
+        "song_description": song_description,
         "pics": file_urls
     })
 

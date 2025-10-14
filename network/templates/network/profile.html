@@ -96,11 +96,11 @@
     <div class="extras">
     {% if graduate.q9 %}
         <h2>Your song of the moment:</h2>
-        {% if song.description %}
+        {% if song_description is not None %}
             <p>🎶 {{ song.description }} 🎶</p>
         {% else %}
         <div class="song">
-            <iframe src="https://open.spotify.com/embed/track/{{ song.spotify }}" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <iframe src="https://open.spotify.com/embed/track/{{ song }}" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
         {% endif %}
     {% endif %}
