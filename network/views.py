@@ -114,7 +114,7 @@ def memoriam(request, person):
         folder_path = os.path.join(settings.BASE_DIR, 'network', 'static', 'linda')
         files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
         file_urls1 = [f'linda/{f}' for f in files[0:9]]
-        file_urls2 = [f'linda/{f}' for f in files[10:len(files)-1]]
+        file_urls2 = [f'linda/{f}' for f in files[10:]]
     elif person == "zaza":
         for grad in grads:
             if grad.for_zaza:
