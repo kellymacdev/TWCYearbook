@@ -249,6 +249,16 @@ def register(request):
         # Ensure password matches confirmation
         password = request.POST["password"]
         confirmation = request.POST["confirmation"]
+        invite_code = request.POST.get("invite_code")  # new field
+
+        # Check invite code
+        if invite_code != "CLASS2015":  # your secret code
+            return render(request, "network/register.html", {
+                "message": "Invalid invite code."
+            })
+
+
+
         if password != confirmation:
             return render(request, "network/register.html", {
                 "message": "Passwords must match."
