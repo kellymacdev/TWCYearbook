@@ -97,7 +97,7 @@
     {% if graduate.q9 %}
         <h2>Your song of the moment:</h2>
         {% if song_description %}
-            <p>🎶 {{ song.description }} 🎶</p>
+            <p>🎶 {{ song_description }} 🎶</p>
         {% else %}
         <div class="song">
             <iframe src="https://open.spotify.com/embed/track/{{ song }}" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
