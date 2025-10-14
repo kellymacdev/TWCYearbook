@@ -38,7 +38,7 @@ class Command(BaseCommand):
     help = 'Import students and their answers from Google Sheet'
 
     def handle(self, *args, **kwargs):
-        with open('/Users/kellymacdevette/Dropbox/2025/WebDev/TWC2025/project4/data/graduates.csv', newline='', encoding='utf-8') as f:
+        with open('../../../data/graduates.csv', newline='', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
                 graduate_data = {}
