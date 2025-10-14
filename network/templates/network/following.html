@@ -1,0 +1,19 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+<h1>Posts from my users</h1>
+    
+    <hr>
+    
+    <div id="all-posts"></div>
+    
+    <nav> <div class="pagination"></div></nav>
+    
+{% endblock %}
+
+
+
+{% block script %}
+    <script src="{% static 'network/following.js' %}?v=3"></script>
+{% endblock %}

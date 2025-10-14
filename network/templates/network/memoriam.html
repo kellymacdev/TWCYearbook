@@ -1,0 +1,39 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+    <h1>In Memory of {{ person }}</h1>
+    <hr>
+
+    <div class="full-container">
+        <div class="top-row">
+            <div class="message-container">
+                {% for message in memoriam_list %}
+                    <div class="speech-bubble">
+                        {{ message.0 }}
+                             <br>
+                        <span id="by-line">- {{ message.1 }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="photo-container">
+                {% for image in imgs.0 %}
+                    <img src="{% static image %}" alt="">
+                {% endfor %}
+            </div>
+        </div>
+    
+        <div class="photo-row">
+            {% for image in imgs.1 %}
+                    <img src="{% static image %}" alt="">
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/index.js' %}?v=10"></script>
+{% endblock %}
