@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'project4.wsgi.application'
 
 DATABASES = {
      "default": dj_database_url.config(
-        default=f"postgres://{os.getenv('DB_USER','yearbook_user')}:{os.getenv('DB_PASSWORD','kelly12345')}@localhost:5432/yearbook_db"
+        default="postgresql://yearbook_db_i8hq_user:lED1fSQJwWMwE3IKsnV495JBdJaWsm2h@dpg-d3n2ksgdl3ps73foo240-a/yearbook_db_i8hq"
     )
 }
 
