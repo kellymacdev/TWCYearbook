@@ -112,18 +112,22 @@ def memoriam(request, person):
                 for_linda.append([grad.for_linda,grad.name])
         list = for_linda
         folder_path = os.path.join(settings.BASE_DIR, 'network', 'static', 'linda')
-        files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+        files = sorted(
+            [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+        )
         file_urls1 = [f'linda/{f}' for f in files[0:9]]
-        file_urls2 = [f'linda/{f}' for f in files[10:]]
+        file_urls2 = [f'linda/{f}' for f in files[9:13]]
     elif person == "zaza":
         for grad in grads:
             if grad.for_zaza:
                 for_zaza.append([grad.for_zaza,grad.name])
         list = for_zaza
         folder_path = os.path.join(settings.BASE_DIR, 'network', 'static', 'zaza')
-        files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+        files = sorted(
+            [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+        )
         file_urls1 = [f'zaza/{f}' for f in files[0:9]]
-        file_urls2 = [f'zaza/{f}' for f in files[10:len(files) - 1]]
+        file_urls2 = [f'zaza/{f}' for f in files[9:13]]
     else:
         list = None
         file_urls1 = None

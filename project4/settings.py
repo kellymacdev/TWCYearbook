@@ -27,7 +27,7 @@ SECRET_KEY = '13kl@xtukpwe&xj2xoysxe9_6=tf@f8ewxer5n&ifnd46+6$%8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["twcyearbook.onrender.com"]
+ALLOWED_HOSTS = ["twcyearbook.onrender.com", "127.0.0.1"]
 
 
 # Application definition
@@ -82,6 +82,13 @@ DATABASES = {
         default="postgresql://yearbook_db_i8hq_user:lED1fSQJwWMwE3IKsnV495JBdJaWsm2h@dpg-d3n2ksgdl3ps73foo240-a/yearbook_db_i8hq"
     )
 }
+
+#DATABASES = {
+#        'default': {
+#            'ENGINE': 'django.db.backends.sqlite3',
+#            'NAME': os.path.join(BASE_DIR, "db.sqlite3"),
+#    }
+#}
 
 AUTH_USER_MODEL = "network.User"
 
