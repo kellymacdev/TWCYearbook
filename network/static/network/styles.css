@@ -19,12 +19,12 @@ body::before {
 
 .body {
     padding: 50px 50px;
-    font-size: 22px;
+    font-size: 1.2rem;
     font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
     font-weight: 350;
     font-style: normal;
-    width: 80vw;
+    width: 90vw;
     margin: 20px auto;
     background-color: #ffffff;
     border-radius: 10px;
@@ -36,7 +36,7 @@ body::before {
 }
 
 h2 {
-    font-size: 25px;
+    font-size: 1.5rem;
 }
 
 .post {
@@ -94,7 +94,7 @@ ion-icon {
 }
 
 .username-display {
-    font-size: 25px;
+    font-size: 1.5rem;
     color: royalblue;
     margin-bottom: 50px;
 }
@@ -153,7 +153,7 @@ ion-icon {
 h1 {
     justify-self: center;
     font-family: "Alfa Slab One", serif;
-    font-size: 55px;
+    font-size: 3.4rem;
     font-weight: 200;
     font-style: normal;
     color: black;
