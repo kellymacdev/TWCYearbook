@@ -7,7 +7,7 @@ pip install -r requirements.txt
 
 # Collect static files
 echo "Collecting static files..."
-python manage.py collectstatic --noinput
+python manage.py collectstatic --noinput --clear
 
 # Run migrations
 echo "Applying migrations..."
