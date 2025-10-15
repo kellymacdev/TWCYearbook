@@ -18,15 +18,18 @@ def index(request):
     #paginate = paginator.Paginator(posts, 10)
     #page_number = request.GET.get('page', 1)
     #page_obj = paginate.get_page(page_number)
-    grads = Graduate.objects.all().order_by('name')
+    all_grads = Graduate.objects.all().order_by('name')[0:17]
+    grads = []
+    for grad in all_grads:
+        file_name = grad.name.replace(' ', '-')
+        grads.append((grad, f'photos/Headshots/Final/{file_name}.jpg'))
     return render(request, 'network/index.html', {
         #"posts": [post.serialize(request.user) for post in page_obj.object_list],
         #"page": page_obj.number,
         #"has_next": page_obj.has_next(),
         #"has_previous": page_obj.has_previous(),
         #"total_pages": page_obj.paginator.num_pages,
-        "graduates": grads,
-        "grads_name_id": [grad.name.replace('', '_') for grad in grads]
+        "graduates": grads
     })
 
 @login_required
@@ -82,9 +85,17 @@ def profile(request, grad_id):
     if request.method == "GET":
         grad = Graduate.objects.get(pk=grad_id)
         gradname = grad.name.replace(' ', '-')
-        folder_path = os.path.join(settings.BASE_DIR, 'network', 'static', 'photos', f'{gradname}')
-        files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f)) and not f.startswith('.') ]
-        file_urls = [f'photos/{gradname}/{f}' for f in files]
+        if grad.name == "Lisha Govender":
+            file_urls = None
+        elif grad.name == "Megan Manley / Glover":
+            folder_path = os.path.join(settings.BASE_DIR, 'network', 'static', 'photos', 'Megan-Manley')
+            files = [f for f in os.listdir(folder_path) if
+                     os.path.isfile(os.path.join(folder_path, f)) and not f.startswith('.')]
+            file_urls = [f'photos/Megan-Manley/{f}' for f in files]
+        else:
+            folder_path = os.path.join(settings.BASE_DIR, 'network', 'static', 'photos', f'{gradname}')
+            files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f)) and not f.startswith('.') ]
+            file_urls = [f'photos/{gradname}/{f}' for f in files]
         if grad.q9:
             if grad.spotify:
                 song = grad.spotify

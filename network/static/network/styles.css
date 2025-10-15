@@ -375,6 +375,7 @@ hr.custom-svg {
   box-shadow: 0 4px 10px rgba(76, 99, 175, 0.3);  /* subtle color shadow */
   transition: all 0.25s ease-in-out;              /* smooth animation */
     margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 /* Hover effect */
@@ -434,3 +435,36 @@ blockquote {
   box-shadow: 15px 15px 0 0 rgba(100, 149, 237, 0.73);
 }
 
+.grad-list {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:5px;
+}
+
+.grad-pic-name {
+    width: calc(12% - 1px);
+    justify-content: center;
+}
+
+.grad-pic-name img {
+    width: 100%; /* 3 images per row with gaps */
+    height: 90%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.grad-index-image-link img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+  cursor: pointer;
+}
+
+.grad-index-image-link img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+}
