@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 import json
 from django.core import paginator
@@ -79,27 +79,46 @@ def edit_post(request, post_id):
 
 @login_required
 def profile(request, grad_id):
-    grad = Graduate.objects.get(pk=grad_id)
-    gradname = grad.name.replace(' ', '-')
-    folder_path = os.path.join(settings.BASE_DIR, 'network', 'static', 'photos', f'{gradname}')
-    files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
-    file_urls = [f'photos/{gradname}/{f}' for f in files]
-    if grad.q9:
-        if grad.spotify:
-            song = grad.spotify
-            song_description = None
+    if request.method == "GET":
+        grad = Graduate.objects.get(pk=grad_id)
+        gradname = grad.name.replace(' ', '-')
+        folder_path = os.path.join(settings.BASE_DIR, 'network', 'static', 'photos', f'{gradname}')
+        files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f)) and not f.startswith('.') ]
+        file_urls = [f'photos/{gradname}/{f}' for f in files]
+        if grad.q9:
+            if grad.spotify:
+                song = grad.spotify
+                song_description = None
+            else:
+                song_description = grad.q9
+                song = None
         else:
-            song_description = grad.q9
             song = None
-    else:
-        song = None
-        song_description = None
-    return render(request, "network/profile.html", {
-        "graduate": grad,
-        "song": song,
-        "song_description": song_description,
-        "pics": file_urls
-    })
+            song_description = None
+        return render(request, "network/profile.html", {
+            "graduate": grad,
+            "song": song,
+            "song_description": song_description,
+            "pics": file_urls
+        })
+    elif request.method == "POST":
+        grads = list(Graduate.objects.all().order_by('name'))
+        current_grad = Graduate.objects.get(pk=grad_id)
+        current_index = grads.index(current_grad)
+        count_grad = Graduate.objects.count()
+        if "next" in request.POST:
+            next_index = current_index + 1
+            if next_index > count_grad:
+                next_index = 0
+            next_id = grads[next_index].pk
+            return redirect('profile', next_id)
+        elif "previous" in request.POST:
+            prev_index = current_index - 1
+            if prev_index < 0:
+                prev_index = count_grad-1
+            prev_id = grads[prev_index].pk
+            return redirect('profile', prev_id)
+
 
 @login_required
 def memoriam(request, person):
@@ -113,10 +132,10 @@ def memoriam(request, person):
         list = for_linda
         folder_path = os.path.join(settings.BASE_DIR, 'network', 'static', 'linda')
         files = sorted(
-            [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+            [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f)) and not f.startswith('.') ]
         )
-        file_urls1 = [f'linda/{f}' for f in files[0:9]]
-        file_urls2 = [f'linda/{f}' for f in files[9:13]]
+        file_urls1 = [f'linda/{f}' for f in files[0:6]]
+        file_urls2 = [f'linda/{f}' for f in files[6:]]
     elif person == "zaza":
         for grad in grads:
             if grad.for_zaza:
@@ -124,10 +143,10 @@ def memoriam(request, person):
         list = for_zaza
         folder_path = os.path.join(settings.BASE_DIR, 'network', 'static', 'zaza')
         files = sorted(
-            [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+            [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f)) and not f.startswith('.') ]
         )
-        file_urls1 = [f'zaza/{f}' for f in files[0:9]]
-        file_urls2 = [f'zaza/{f}' for f in files[9:13]]
+        file_urls1 = [f'zaza/{f}' for f in files[0:7]]
+        file_urls2 = [f'zaza/{f}' for f in files[7:]]
     else:
         list = None
         file_urls1 = None

@@ -18,7 +18,7 @@ body::before {
 
 
 .body {
-    padding: 50px 50px;
+    padding: 60px 20px;
     font-size: 1.4rem;
     font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
@@ -26,10 +26,20 @@ body::before {
     font-style: normal;
     width: 90vw;
     margin: 20px auto;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(100, 149, 237, 0.23);
+    /*background-image: url("v602-nunoon-32-rippednotes.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;*/
+    background-color: rgba(255, 255, 255, 0.7);
+    /*border-radius: 10px;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(100, 149, 237, 0.23);*/
 }
+
+
+
+
+
+
 
 #new-post-content {
     width: 60vw;
@@ -135,26 +145,37 @@ ion-icon {
 .answer {
     /*border: 1px solid cornflowerblue;*/
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 15px 0 15px;
     margin-bottom: 20px;
     margin-left: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(100, 149, 237, 0.23);
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .advice {
+    width: 70%;
+    justify-self: center;
+    text-align: center;
     background-color: rgba(100, 149, 237, 0.73);
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 20px;
-    margin-left: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 h1 {
     justify-self: center;
-    font-family: "Alfa Slab One", serif;
-    font-size: 3.4rem;
-    font-weight: 200;
+    font-family: "Caladea", serif;
+    font-size: 4rem;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+}
+
+h2 {
+    font-family: "Caladea", serif;
+    font-size: 1.6rem;
+    font-weight: 400;
     font-style: normal;
     color: black;
 }
@@ -171,7 +192,7 @@ h1 {
 }
 
 iframe {
-    width: 60vw;
+    width: 80%;
     display: block;
     margin: 15px auto;
 }
@@ -258,22 +279,35 @@ iframe {
 }
 
 .photo-row {
+    width: 100%;
+    justify-content: center;
   display: flex;
-  gap: 10px;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 .photo-row img {
-  width: calc(25% - 5px); /* 3 images per row with gaps */
+  width: calc(24% - 1px); /* 3 images per row with gaps */
   object-fit: cover;
   border-radius: 10px;
 }
 
 .summary-container {
     display: flex;
-  gap: 20px;
-  align-items: stretch; /* makes bubble-container and photo-container same height */
+    gap: 20px;
+    align-items: stretch; /* makes bubble-container and photo-container same height */
     justify-content: center;
 }
+
+.extras-container {
+    display: flex;
+    gap: 20px;
+    align-items: stretch; /* makes bubble-container and photo-container same height */
+    justify-content: center;
+    margin-top: 20px;
+}
+
 
 .info-container {
   width: 80%;
@@ -295,7 +329,7 @@ iframe {
 }
 
 .answers-container {
-    width: 50%;
+    width: 55%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -308,9 +342,95 @@ iframe {
   gap: 10px;
 }
 
+.advice-container {
+    width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+    justify-content: space-around;
+}
+
 hr.custom-svg {
     border: none;                 /* remove default border */
     height: 6px;                 /* height of your SVG */
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><defs><linearGradient id="a16" x1="0" x2="1000" y1="50" y2="50" gradientUnits="userSpaceOnUse"><stop stop-color="%239FC3DB" offset="0" stop-opacity="0"></stop><stop stop-color="%239FC3DB" offset=".5"></stop><stop stop-color="%239FC3DB" offset="1" stop-opacity="0"></stop></linearGradient></defs><path fill="url(%23a16)" d="M0 0h1000v100H0z"></path></svg>') no-repeat center;
     background-size: cover;       /* scale to fill the hr height */
 }
+
+
+.button-box {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.navi-button {
+  background-color: rgba(255, 255, 255, 0.2);              /* main color */
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(76, 99, 175, 0.3);  /* subtle color shadow */
+  transition: all 0.25s ease-in-out;              /* smooth animation */
+    margin-bottom: 15px;
+}
+
+/* Hover effect */
+.navi-button:hover {
+  opacity: 0.9;                                   /* slight fade */
+  transform: translateY(-2px);                     /* lift a bit */
+  box-shadow: 0 6px 14px rgba(76, 99, 175, 0.6);   /* stronger shadow */
+}
+
+/* Clicked (active) effect */
+.navi-button:active {
+  transform: translateY(1px);                      /* press down */
+  box-shadow: 0 2px 6px rgba(76, 99, 175, 0.3);
+}
+
+.profile-img {
+    border: 2px solid #ddd;
+    padding: 6px;
+}
+
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 50px;
+    color: rgba(82, 141, 244, 0.9);
+}
+
+blockquote {
+  background: white;
+  padding: 20px 30px 20px 30px;
+  margin: 50px auto;
+  width: 70%;
+  max-width: 800px;
+}
+
+.stacked {
+  border: solid 2px;
+  padding: 20px 30px 20px 30px;
+  box-shadow: 13px 13px 0 0 white,
+              15px 15px 0 0 rgba(100, 149, 237, 0.73),
+              15px 11px 0 0 rgba(100, 149, 237, 0.73),
+              11px 15px 0 0 rgba(100, 149, 237, 0.73);
+}
+
+.stacked-shadow {
+    border: solid 2px rgba(100, 149, 237, 0.73);
+    box-shadow: 13px 13px 0 0 rgba(255, 255, 255, 0.7),
+              15px 15px 0 0 rgba(100, 149, 237, 0.73),
+              15px 11px 0 0 rgba(100, 149, 237, 0.73),
+              11px 15px 0 0 rgba(100, 149, 237, 0.73);
+}
+
+
+.shadow {
+  border: solid 2px;
+  box-shadow: 15px 15px 0 0 rgba(100, 149, 237, 0.73);
+}
+

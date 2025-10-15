@@ -30,96 +30,106 @@
     {% endif %}
     
     <hr class="custom-svg">
-
-    <div class="summary-container">
-    <div class="answers-container">
-    {% if graduate.gen_description %}
-        <div class="answer"><p>{{ graduate.gen_description }}</p></div>
-    {% endif %}
     
-    <hr>
+    <div class="summary-container">
+        <div class="answers-container">
+        {% if graduate.gen_description %}
+            <div class="answer"><p>{{ graduate.gen_description }}</p></div>
+        {% endif %}
+    
+        <hr>
 
-    {% if graduate.hobbies %}
-        <h2>Hobbies:</h2>
-        <div class="answer"><p>{{ graduate.hobbies }}</p></div>
-    {% endif %}
+        {% if graduate.hobbies %}
+            <h2>Hobbies:</h2>
+            <div class="answer"><p>{{ graduate.hobbies }}</p></div>
+        {% endif %}
 
-    {% if graduate.q1 %}
-        <h2>What things does current you do that would shock high school you?</h2>
-        <div class="answer"><p>{{ graduate.q1 }}</p></div>
-    {% endif %}
+        {% if graduate.q1 %}
+            <h2>What things does current you do that would shock high school you?</h2>
+            <div class="answer"><p>{{ graduate.q1 }}</p></div>
+        {% endif %}
 
-    {% if graduate.q2 %}
-        <h2>What's your favourite thing about yourself?</h2>
-        <div class="answer"><p>{{ graduate.q2 }}</p></div>
-    {% endif %}
+        {% if graduate.q2 %}
+            <h2>What's your favourite thing about yourself?</h2>
+            <div class="answer"><p>{{ graduate.q2 }}</p></div>
+        {% endif %}
 
-    {% if graduate.q3 %}
-        <h2>What are you proud to have done in the past 10 years?</h2>
-        <div class="answer"><p>{{ graduate.q3 }}</p></div>
-    {% endif %}
+        {% if graduate.q3 %}
+            <h2>What are you proud to have done in the past 10 years?</h2>
+            <div class="answer"><p>{{ graduate.q3 }}</p></div>
+        {% endif %}
 
-    {% if graduate.q4 %}
-        <h2>What have you learnt since high school?</h2>
-        <div class="answer"><p>{{ graduate.q4 }}</p></div>
-    {% endif %}
+        {% if graduate.q4 %}
+            <h2>What have you learnt since high school?</h2>
+            <div class="answer"><p>{{ graduate.q4 }}</p></div>
+        {% endif %}
 
-    {% if graduate.q5 %}
+        {% if graduate.q5 %}
         <h2>What do you miss most about high school?</h2>
         <div class="answer"><p>{{ graduate.q5 }}</p></div>
-    {% endif %}
+        {% endif %}
 
-    {% if graduate.q6 %}
+        {% if graduate.q6 %}
         <h2>What are you grateful for?</h2>
         <div class="answer"><p>{{ graduate.q6 }}</p></div>
-    {% endif %}
+        {% endif %}
     
-    {% if graduate.q7 %}
+        {% if graduate.q7 %}
         <h2>What's your perfect weekend look like?</h2>
         <div class="answer"><p>{{ graduate.q7 }}</p></div>
-    {% endif %}
+        {% endif %}
     
-    {% if graduate.q8 %}
+        {% if graduate.q8 %}
         <h2>What could you speak about for hours?</h2>
         <div class="answer"><p>{{ graduate.q8 }}</p></div>
-    {% endif %}
+        {% endif %}
 
     </div>
     
     <div class="pics-container">
         {% for pic in pics %}
-            <img src="{% static pic %}">
+            <img src="{% static pic %}" class="profile-img">
         {% endfor %}
     </div>
     </div>
     
-    <div class="extras">
+    <div class="extras-container">
+    <div class="answers-container">
     {% if graduate.q9 %}
         <h2>Your song of the moment:</h2>
         {% if song_description %}
             <p>🎶 {{ song_description }} 🎶</p>
         {% else %}
         <div class="song">
-            <iframe src="https://open.spotify.com/embed/track/{{ song }}" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <iframe src="https://open.spotify.com/embed/track/{{ song }}" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
         {% endif %}
     {% endif %}
-    
+    </div>
+    <div class="advice-container">
     {% if graduate.q10 %}
-        <div class="advice">
-        <p>{{ graduate.q10 }}</p>
+        <div class="wrapper">
+        <blockquote class="stacked">
+            <p>{{ graduate.q10 }}</p>
+        </blockquote>
         </div>
     {% endif %}
     </div>
+    </div>
+    
+ 
     
 {% endblock %}
 
 
 
-
-
-
-
-{% block script %}
-    <script src="{% static 'network/profile.js' %}?v=3"></script>
+{% block bottom %}
+ <form method="post">
+     {% csrf_token %}
+ <button type="submit" name="previous" class="navi-button">< Previous Graduate</button>
+ <button type="submit" name="next" class="navi-button">Next Graduate ></button>
+ </form>
 {% endblock %}
+
+
+
