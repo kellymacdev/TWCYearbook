@@ -863,3 +863,7 @@ blockquote.mobile {
   box-sizing: border-box;
 }
 
+span.center {
+    text-align: center;
+}
+

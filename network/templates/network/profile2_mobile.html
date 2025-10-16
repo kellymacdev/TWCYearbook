@@ -12,7 +12,7 @@
 
 
 
-    <span style="font-size:0.9em;">
+    <span style="font-size:0.9em;" class="center">
     {% if graduate.pronouns %}
     <ion-icon name="person" style="font-size: 1.2em; vertical-align: middle;"></ion-icon> {{ graduate.pronouns }}
         &nbsp;&nbsp;|
@@ -22,14 +22,14 @@
     <ion-icon name="earth" style="color: black; font-size: 1.2em; vertical-align: middle"></ion-icon> {{ graduate.city }}
         &nbsp;&nbsp;|
     {% endif %}
-    </span><br>
+    </span class="center"><br>
     {% if graduate.industry %}
         <span><ion-icon name="briefcase" style="font-size: 1.2em; vertical-align: middle;"></ion-icon> Working in: {{ graduate.industry }}</span>
     {% endif %}
 
 
     {% if graduate.contact %}
-    <p class="contact-mobile"><ion-icon name="chatbubbles" style="font-size: 1.2em; vertical-align: middle;"></ion-icon>  {{ graduate.contact }}</p>
+    <p class="contact-mobile"><ion-icon name="chatbubbles" style="font-size: 1.2em; vertical-align: middle;"></ion-icon>&nbsp; {{ graduate.contact }}</p>
     {% endif %}
     </div>
 
