@@ -110,7 +110,12 @@ def profile(request, grad_id):
         else:
             song = None
             song_description = None
-        return render(request, "network/profile2.html", {
+        user_agent = request.META.get('HTTP_USER_AGENT', '').lower()
+        if 'mobile' in user_agent or 'iphone' in user_agent or 'android' in user_agent:
+            template_name = "network/profile2_mobile.html"
+        else:
+            template_name = "network/profile2.html"
+        return render(request, template_name, {
             "graduate": grad,
             "song": song,
             "song_description": song_description,
