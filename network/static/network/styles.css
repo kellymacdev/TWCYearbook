@@ -756,3 +756,10 @@ nav {
   margin-top: 5px;
   font-size: 0.9rem;
 }
+
+@media (max-width: 600px) {
+  .grad-list {
+    grid-template-columns: repeat(4, 1fr); /* 5 per row on small screens */
+      grid-template-rows: repeat(13, 1fr);
+  }
+}
