@@ -7,10 +7,9 @@
     <div class="summary-container-new">
         <div class="answers-container-new">
         <div class="header-info">
-        {% if graduate.maiden_name %}
-        <h1 data-username="{{ graduate.name }}" class="name">{{ graduate.name }} (n&eacute;e {{ graduate.maiden_name }})</h1>
-    {% else %}
         <h1 data-username="{{ graduate.name }}" class="name">{{ graduate.name }}</h1>
+        {% if graduate.maiden_name %}
+        <h1 data-username="{{ graduate.name }}" class="name">(n&eacute;e {{ graduate.maiden_name }})</h1>
     {% endif %}
 
     <span>
