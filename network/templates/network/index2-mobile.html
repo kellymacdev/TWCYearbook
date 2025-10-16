@@ -1,0 +1,27 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+    {% if user.is_authenticated %}
+    <h1 class="class-of-2015-h1">CLASS OF 2015</h1>
+    <hr>
+
+
+    <div class="grad-list-mobile">
+
+    {% for grad, photo in graduates %}
+        <div class="grad-pic-name-new">
+        <a href="{% url 'profile' grad_id=grad.id %}" class="grad-index-image-link"><img src="{% static photo %}"></a>
+        <p class="grad-name">{{ grad.name }}</p>
+        </div>
+    {% endfor %}
+
+    </div>
+
+
+    {% else %}
+        <h1 class="class-of-2015-h1">You must log in to see what's going on.</h1>
+    {% endif %}
+{% endblock %}
+
