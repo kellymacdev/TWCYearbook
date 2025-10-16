@@ -868,7 +868,7 @@ span.center {
 }
 
 .header-info-mobile {
-    display: flex;
+    display: block;
     justify-content: center;
     text-align: center;
     margin: 0 auto;
