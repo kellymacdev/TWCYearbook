@@ -18,7 +18,7 @@ def index(request):
     #paginate = paginator.Paginator(posts, 10)
     #page_number = request.GET.get('page', 1)
     #page_obj = paginate.get_page(page_number)
-    all_grads = Graduate.objects.all().order_by('name')[0:38]
+    all_grads = Graduate.objects.all().order_by('name')
     grads = []
     for grad in all_grads:
         if grad.name == "Megan Manley / Glover":
