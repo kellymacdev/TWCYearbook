@@ -5,9 +5,9 @@
 {% block body %}
 
      <div class="header-info">
-        <h1 data-username="{{ graduate.name }}" class="name-center">{{ graduate.name }}</h1>
+        <h1 data-username="{{ graduate.name }}" class="name-center-mobile">{{ graduate.name }}</h1>
         {% if graduate.maiden_name %}
-        <h1 data-username="{{ graduate.name }}" class="name-center">(n&eacute;e {{ graduate.maiden_name }})</h1>
+        <h1 data-username="{{ graduate.name }}" class="name-center-mobile">(n&eacute;e {{ graduate.maiden_name }})</h1>
     {% endif %}
 
 
@@ -100,13 +100,13 @@
         {% if song_description %}
             <p>🎶 {{ song_description }} 🎶</p><br>
         {% else %}
-        <div class="song">
+        <div class="song-mobile">
             <iframe src="https://open.spotify.com/embed/track/{{ song }}" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
         {% endif %}
     {% endif %}
 
-    <div class="advice-container">
+    <div class="advice-container-mobile">
     {% if graduate.q10 %}
         <div class="wrapper-new">
         <blockquote class="stacked-new">

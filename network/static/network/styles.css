@@ -763,12 +763,12 @@ nav {
   }
 }
 
-.name-center {
+.name-center-mobile {
     display: flex;
     justify-content: center;
     text-align: center;
     font-family: "Caladea", serif;
-    font-size: 5vw;
+    font-size: 25px;
     font-weight: 400;
     font-style: normal;
     color: black;
