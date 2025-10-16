@@ -91,8 +91,8 @@ DATABASES = {
 #    }
 #}
 
-#STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-#STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 
 
 AUTH_USER_MODEL = "network.User"
