@@ -22,15 +22,15 @@
     <ion-icon name="earth" style="color: black; font-size: 1.2em; vertical-align: middle"></ion-icon> {{ graduate.city }}
         &nbsp;&nbsp;|
     {% endif %}
+    </span>
       &nbsp;&nbsp;
     {% if graduate.industry %}
-        <ion-icon name="briefcase" style="font-size: 1.2em; vertical-align: middle;"></ion-icon> Working in: {{ graduate.industry }}
+        <span><ion-icon name="briefcase" style="font-size: 1.2em; vertical-align: middle;"></ion-icon> Working in: {{ graduate.industry }}</span>
     {% endif %}
 
-    </span>
 
     {% if graduate.contact %}
-    <p class="contact-mobile"><ion-icon name="chatbubbles" style="font-size: 1.2em; vertical-align: middle;"></ion-icon> {{ graduate.contact }}</p>
+    <p class="contact-mobile"><ion-icon name="chatbubbles" style="font-size: 1.2em; vertical-align: middle;"></ion-icon>  {{ graduate.contact }}</p>
     {% endif %}
     </div>
 
