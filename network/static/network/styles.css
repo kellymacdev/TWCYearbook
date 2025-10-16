@@ -92,7 +92,6 @@ ion-icon {
   stroke: black;
   stroke-width: 30;
   transition: all 0.5s;
-  font-size: 25px;
 }
 
 
@@ -768,7 +767,7 @@ nav {
     justify-content: center;
     text-align: center;
     font-family: "Caladea", serif;
-    font-size: 25px;
+    font-size: 35px;
     font-weight: 400;
     font-style: normal;
     color: black;
