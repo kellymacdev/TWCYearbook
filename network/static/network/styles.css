@@ -798,11 +798,11 @@ nav {
 
 .answer-mobile {
     padding: 10px 15px 0 15px;
-    margin-bottom: 20px;
-    margin-left: 10px;
+    margin: 0 10px 20px 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(245, 225, 171, 0.49);
-    width: 90%;
+    width: 95%;
     border-radius: 8px;
+    justify-self: center;
 }
 
 .advice-container-mobile {
@@ -812,4 +812,26 @@ nav {
   gap: 10px;
     justify-content: space-around;
     justify-self: center;
+}
+
+.extras-container-mobile {
+    display: flex;
+    align-items: stretch; /* makes bubble-container and photo-container same height */
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%
+}
+
+.song-mobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+h2.mobile {
+    font-family: "Caladea", serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
 }

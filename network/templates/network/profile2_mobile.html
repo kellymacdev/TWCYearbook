@@ -51,67 +51,61 @@
         <hr>
 
         {% if graduate.hobbies %}
-            <h2>Hobbies:</h2>
+            <h2 class="mobile">Hobbies:</h2>
             <div class="answer-mobile"><p>{{ graduate.hobbies }}</p></div>
         {% endif %}
 
         {% if graduate.q1 %}
-            <h2>What things does current you do that would shock high school you?</h2>
+            <h2 class="mobile">What things does current you do that would shock high school you?</h2>
             <div class="answer-mobile"><p>{{ graduate.q1 }}</p></div>
         {% endif %}
 
         {% if graduate.q2 %}
-            <h2>What's your favourite thing about yourself?</h2>
+            <h2 class="mobile">What's your favourite thing about yourself?</h2>
             <div class="answer-mobile"><p>{{ graduate.q2 }}</p></div>
         {% endif %}
 
         {% if graduate.q3 %}
-            <h2>What are you proud to have done in the past 10 years?</h2>
+            <h2 class="mobile">What are you proud to have done in the past 10 years?</h2>
             <div class="answer-mobile"><p>{{ graduate.q3 }}</p></div>
         {% endif %}
 
         {% if graduate.q4 %}
-            <h2>What have you learnt since high school?</h2>
+            <h2 class="mobile">What have you learnt since high school?</h2>
             <div class="answer-mobile"><p>{{ graduate.q4 }}</p></div>
         {% endif %}
 
         {% if graduate.q5 %}
-        <h2>What do you miss most about high school?</h2>
+        <h2 class="mobile">What do you miss most about high school?</h2>
         <div class="answer-mobile"><p>{{ graduate.q5 }}</p></div>
         {% endif %}
 
         {% if graduate.q6 %}
-        <h2>What are you grateful for?</h2>
+        <h2 class="mobile">What are you grateful for?</h2>
         <div class="answer-mobile"><p>{{ graduate.q6 }}</p></div>
         {% endif %}
 
         {% if graduate.q7 %}
-        <h2>What's your perfect weekend look like?</h2>
+        <h2 class="mobile">What's your perfect weekend look like?</h2>
         <div class="answer-mobile"><p>{{ graduate.q7 }}</p></div>
         {% endif %}
 
         {% if graduate.q8 %}
-        <h2>What could you speak about for hours?</h2>
+        <h2 class="mobile">What could you speak about for hours?</h2>
         <div class="answer-mobile"><p>{{ graduate.q8 }}</p></div>
         {% endif %}
 
-    </div>
-
-
-
-
-    <div class="extras-container">
-    {% if graduate.q9 %}
-        <h2>Your song of the moment:</h2>
+        {% if graduate.q9 %}
+        <h2 class="mobile">Your song of the moment:</h2>
         {% if song_description %}
-            <p>🎶 {{ song_description }} 🎶</p>
+            <p>🎶 {{ song_description }} 🎶</p><br>
         {% else %}
         <div class="song">
             <iframe src="https://open.spotify.com/embed/track/{{ song }}" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
         {% endif %}
     {% endif %}
-    </div>
+
     <div class="advice-container">
     {% if graduate.q10 %}
         <div class="wrapper-new">
@@ -121,6 +115,12 @@
         </div>
     {% endif %}
     </div>
+
+
+
+    </div>
+
+
 
 
 
