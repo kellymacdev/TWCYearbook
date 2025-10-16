@@ -305,6 +305,7 @@ iframe {
     align-items: stretch; /* makes bubble-container and photo-container same height */
     justify-content: center;
     margin-top: 20px;
+    width: 100%
 }
 
 
@@ -802,4 +803,13 @@ nav {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(245, 225, 171, 0.49);
     width: 90%;
     border-radius: 8px;
+}
+
+.advice-container-mobile {
+    width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+    justify-content: space-around;
+    justify-self: center;
 }
