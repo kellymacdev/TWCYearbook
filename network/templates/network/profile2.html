@@ -1,0 +1,139 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+
+{% block body %}
+
+    <div class="summary-container-new">
+        <div class="answers-container-new">
+        <div class="header-info">
+        {% if graduate.maiden_name %}
+        <h1 data-username="{{ graduate.name }}" class="name">{{ graduate.name }} (n&eacute;e {{ graduate.maiden_name }})</h1>
+    {% else %}
+        <h1 data-username="{{ graduate.name }}" class="name">{{ graduate.name }}</h1>
+    {% endif %}
+
+    <span>
+    {% if graduate.pronouns %}
+    <ion-icon name="person" style="font-size: 1.2em; vertical-align: middle;"></ion-icon> {{ graduate.pronouns }}
+        &nbsp;&nbsp;&nbsp;|
+    {% endif %}
+      &nbsp;&nbsp;&nbsp;
+    {% if graduate.city %}
+    <ion-icon name="earth" style="color: black; font-size: 1.2em; vertical-align: middle"></ion-icon> {{ graduate.city }}
+        &nbsp;&nbsp;&nbsp;
+    {% endif %}
+     | &nbsp;&nbsp;&nbsp;
+    {% if graduate.industry %}
+        <ion-icon name="briefcase" style="font-size: 1.2em; vertical-align: middle;"></ion-icon> Working in: {{ graduate.industry }}
+    {% endif %}
+    
+    </span>
+
+    {% if graduate.contact %}
+    <p class="contact-new"><ion-icon name="chatbubbles" style="font-size: 1.2em; vertical-align: middle;"></ion-icon> {{ graduate.contact }}</p>
+    {% endif %}
+    </div>
+        
+    <hr>
+        
+        {% if graduate.gen_description %}
+            <div class="answer-new"><p>{{ graduate.gen_description }}</p></div>
+        {% endif %}
+
+        <hr>
+
+        {% if graduate.hobbies %}
+            <h2>Hobbies:</h2>
+            <div class="answer-new"><p>{{ graduate.hobbies }}</p></div>
+        {% endif %}
+
+        {% if graduate.q1 %}
+            <h2>What things does current you do that would shock high school you?</h2>
+            <div class="answer-new"><p>{{ graduate.q1 }}</p></div>
+        {% endif %}
+
+        {% if graduate.q2 %}
+            <h2>What's your favourite thing about yourself?</h2>
+            <div class="answer-new"><p>{{ graduate.q2 }}</p></div>
+        {% endif %}
+
+        {% if graduate.q3 %}
+            <h2>What are you proud to have done in the past 10 years?</h2>
+            <div class="answer-new"><p>{{ graduate.q3 }}</p></div>
+        {% endif %}
+
+        {% if graduate.q4 %}
+            <h2>What have you learnt since high school?</h2>
+            <div class="answer-new"><p>{{ graduate.q4 }}</p></div>
+        {% endif %}
+
+        {% if graduate.q5 %}
+        <h2>What do you miss most about high school?</h2>
+        <div class="answer-new"><p>{{ graduate.q5 }}</p></div>
+        {% endif %}
+
+        {% if graduate.q6 %}
+        <h2>What are you grateful for?</h2>
+        <div class="answer-new"><p>{{ graduate.q6 }}</p></div>
+        {% endif %}
+
+        {% if graduate.q7 %}
+        <h2>What's your perfect weekend look like?</h2>
+        <div class="answer-new"><p>{{ graduate.q7 }}</p></div>
+        {% endif %}
+
+        {% if graduate.q8 %}
+        <h2>What could you speak about for hours?</h2>
+        <div class="answer-new"><p>{{ graduate.q8 }}</p></div>
+        {% endif %}
+
+    </div>
+
+    <div class="pics-container">
+        {% for pic in pics %}
+            <img src="{% static pic %}" class="profile-img-new">
+        {% endfor %}
+    </div>
+    </div>
+
+    <div class="extras-container">
+    <div class="answers-container">
+    {% if graduate.q9 %}
+        <h2>Your song of the moment:</h2>
+        {% if song_description %}
+            <p>🎶 {{ song_description }} 🎶</p>
+        {% else %}
+        <div class="song">
+            <iframe src="https://open.spotify.com/embed/track/{{ song }}" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+        {% endif %}
+    {% endif %}
+    </div>
+    <div class="advice-container">
+    {% if graduate.q10 %}
+        <div class="wrapper-new">
+        <blockquote class="stacked-new">
+            <p>{{ graduate.q10 }}</p>
+        </blockquote>
+        </div>
+    {% endif %}
+    </div>
+    </div>
+
+
+
+{% endblock %}
+
+
+
+{% block bottom %}
+ <form method="post">
+     {% csrf_token %}
+ <button type="submit" name="previous" class="navi-button-new">< Previous Graduate</button>
+ <button type="submit" name="next" class="navi-button-new">Next Graduate ></button>
+ </form>
+{% endblock %}
+
+
+

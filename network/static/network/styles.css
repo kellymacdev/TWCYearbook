@@ -1,11 +1,11 @@
-body {
+.old-body {
     background-image: url("6016317.jpg");
     background-size: cover;        /* scales to fill the screen */
     background-repeat: no-repeat;  /* prevents tiling */
     position: relative;   /* centers the image */
 }
 
-body::before {
+.old-body::before {
   content: "";
   position: fixed;
   top: 0;
@@ -17,7 +17,7 @@ body::before {
 }
 
 
-.body {
+/*.body {
     padding: 60px 20px;
     font-size: 1.4rem;
     font-family: "Roboto Condensed", sans-serif;
@@ -26,14 +26,15 @@ body::before {
     font-style: normal;
     width: 90vw;
     margin: 20px auto;
+
+    background-color: rgba(255, 255, 255, 0.7);
     /*background-image: url("v602-nunoon-32-rippednotes.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    position: relative;*/
-    background-color: rgba(255, 255, 255, 0.7);
-    /*border-radius: 10px;
-    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(100, 149, 237, 0.23);*/
-}
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(100, 149, 237, 0.23); }*/
+
 
 
 
@@ -163,14 +164,14 @@ ion-icon {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-h1 {
+/*h1 {
     justify-self: center;
     font-family: "Caladea", serif;
     font-size: 4rem;
     font-weight: 400;
     font-style: normal;
     color: black;
-}
+}*/
 
 h2 {
     font-family: "Caladea", serif;
@@ -392,7 +393,7 @@ hr.custom-svg {
 }
 
 .profile-img {
-    border: 2px solid #ddd;
+    border: 1px solid #ddd;
     padding: 6px;
 }
 
@@ -444,8 +445,10 @@ blockquote {
 }
 
 .grad-pic-name {
-    width: calc(12% - 1px);
+    width: calc(14% - 1px);
+    height: 350px;
     justify-content: center;
+    text-align: center;
 }
 
 .grad-pic-name img {
@@ -456,7 +459,7 @@ blockquote {
 }
 
 .grad-index-image-link img {
-  width: 100%;
+  width: 90%;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
@@ -467,4 +470,224 @@ blockquote {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   opacity: 0.9;
+}
+
+/* ------ New styling things ---------- */
+
+.new-full-body {
+     background-color: rgba(245, 225, 171, 0.49);
+}
+
+.new-body {
+    padding: 10px 10px;
+    font-size: 1.4rem;
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 350;
+    font-style: normal;
+    width: 95%;
+    height: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border: 1.5px solid black;
+    background-color: rgb(255, 255, 255, 0);
+    /*background-image: url("v602-nunoon-32-rippednotes.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;*/
+    /*border-radius: 10px;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(100, 149, 237, 0.23);*/
+
+}
+
+.contact-new {
+    margin-top: 9px;
+    font-size: 0.9em;
+}
+
+.name {
+    display: block;
+    justify-content: left;
+    text-align: left;
+    font-family: "Caladea", serif;
+    font-size: 5rem;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+}
+
+.answers-container-new {
+    width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+    padding-top: 30px;
+}
+
+.summary-container-new {
+    display: flex;
+    gap: 20px;
+    align-items: stretch; /* makes bubble-container and photo-container same height */
+    padding-left: 5px ;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.pics-container-new {
+    width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header-info {
+    display: block;
+    justify-content: left;
+    text-align: left;
+    padding-left: 30px;
+
+}
+
+.answer-new {
+    padding: 10px 15px 0 15px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(245, 225, 171, 0.49);
+    width: 97%;
+    border-radius: 8px;
+
+}
+
+.profile-img-new {
+    padding: 2px;
+}
+
+nav {
+  background-color: rgba(245, 225, 171, 0.03); /* same as your page background */
+  padding: 2rem 0;
+    font-family: "Gayathri", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+/* Flexbox to spread tabs evenly */
+.navbar {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly; /* evenly spaces tabs across full width */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Style the links */
+.navbar a {
+  text-decoration: none;
+  color: inherit; /* same as body text color */
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: font-size 0.5s ease;
+}
+
+/* Optional hover effect */
+.navbar a:hover {
+  font-size: 1.8rem; /* or your accent color */
+    cursor: pointer;
+}
+
+.navi-button-new {
+  background-color: rgba(245, 225, 171, 0.3);              /* main color */
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+    font-family: 'Gayathri', serif;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(181, 166, 127, 0.59);  /* subtle color shadow */
+  transition: all 0.25s ease-in-out;              /* smooth animation */
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+/* Hover effect */
+.navi-button-new:hover {
+  opacity: 0.9;                                   /* slight fade */
+  transform: translateY(-2px);                     /* lift a bit */
+  box-shadow: 0 6px 14px rgba(181, 166, 127, 0.85);   /* stronger shadow */
+    cursor: pointer;
+}
+
+/* Clicked (active) effect */
+.navi-button-new:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(181, 166, 127, 0.59);
+}
+
+.navi-button-new:focus {
+    outline: none;
+}
+
+
+.class-of-2015-h1 {
+    text-align: center;
+    font-family: "Gayathri", serif;
+    font-size: 5rem;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    padding-top: 20px;
+}
+
+.wrapper-new {
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 50px;
+    color: black;
+}
+
+
+.stacked-new {
+    border: solid 2px black;
+    box-shadow: 13px 13px 0 0 rgba(245, 225, 171, 0.98),
+              15px 15px 0 0 black,
+              15px 11px 0 0 black,
+              11px 15px 0 0 black;
+}
+
+.message-container-new {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+    margin-left: 20px;
+    padding-top: 20px;
+}
+
+.login-page {
+    padding: 20px 30px;
+    margin: 0 20px;
+}
+
+.login-heading {
+    display: block;
+    justify-content: left;
+    text-align: left;
+    font-family: "Gayathri", sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    margin-left: 30px;
+    padding-top: 20px;
+}
+
+.info-container-new {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 30px;
+    padding-left: 50px;
 }

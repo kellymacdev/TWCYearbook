@@ -18,12 +18,16 @@ def index(request):
     #paginate = paginator.Paginator(posts, 10)
     #page_number = request.GET.get('page', 1)
     #page_obj = paginate.get_page(page_number)
-    all_grads = Graduate.objects.all().order_by('name')[0:17]
+    all_grads = Graduate.objects.all().order_by('name')[0:38]
     grads = []
     for grad in all_grads:
-        file_name = grad.name.replace(' ', '-')
-        grads.append((grad, f'photos/Headshots/Final/{file_name}.jpg'))
-    return render(request, 'network/index.html', {
+        if grad.name == "Megan Manley / Glover":
+            grads.append((grad, f'photos/Headshots/Final/Megan-Manley.jpg'))
+        else:
+            file_name = grad.name.replace(' ', '-')
+            grads.append((grad, f'photos/Headshots/Final/{file_name}.jpg'))
+
+    return render(request, 'network/index2.html', {
         #"posts": [post.serialize(request.user) for post in page_obj.object_list],
         #"page": page_obj.number,
         #"has_next": page_obj.has_next(),
@@ -106,7 +110,7 @@ def profile(request, grad_id):
         else:
             song = None
             song_description = None
-        return render(request, "network/profile.html", {
+        return render(request, "network/profile2.html", {
             "graduate": grad,
             "song": song,
             "song_description": song_description,
@@ -205,7 +209,7 @@ def summary(request):
     av_countries = tot_countries/k
     av_tattoos = tot_tattoos/l
 
-    return render(request, "network/summary.html",{
+    return render(request, "network/summary2.html",{
         "grads": grads,
         "av_babies": round(av_babies,2),
         "av_jobs": round(av_jobs,2),

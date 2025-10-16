@@ -1,0 +1,31 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+    <h1 class="class-of-2015-h1">TWC 2025 Info</h1>
+    <hr>
+
+
+     
+    <div class="summary-container-new">
+    <div class="info-container-new">
+    <h2>The average TWC 2015 graduate...</h2>
+        <br> <br>
+    <ul id="averages-list">
+    <li>has {{ av_babies }} babies</li>
+    <li>has had {{ av_jobs }} jobs</li>
+    <li>studied for {{ av_school }} years after 2015</li>
+    <li>has lived in {{ av_countries }} countries</li>
+    <li>has {{ av_tattoos }} tattoos</li>
+    </ul>
+    </div>
+
+    <div class="pics-container-new">
+    <img src="{% static "network/Count-of-Current-city.png" %}" alt="">
+        <img src="{% static "network/chart.svg" %}" alt="">
+    </div>
+    </div>
+    
+{% endblock %}
+

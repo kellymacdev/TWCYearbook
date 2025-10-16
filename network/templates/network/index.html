@@ -9,14 +9,14 @@
     
 
     <div class="grad-list">
-    
+
     {% for grad, photo in graduates %}
         <div class="grad-pic-name">
         <a href="{% url 'profile' grad_id=grad.id %}" class="grad-index-image-link"><img src="{% static photo %}"></a>
         <p class="grad-name">{{ grad.name }}</p>
         </div>
     {% endfor %}
-        
+
     </div>
      
 

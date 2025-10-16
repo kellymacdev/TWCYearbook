@@ -2,8 +2,8 @@
 
 {% block body %}
 
-    <h2>Register</h2>
-
+    <h1 class="login-heading">Register</h1>
+    <div class="login-page">
     {% if message %}
         <div>{{ message }}</div>
     {% endif %}
@@ -29,5 +29,5 @@
     </form>
 
     Already have an account? <a href="{% url 'login' %}">Log In here.</a>
-
+    </div>
 {% endblock %}
