@@ -806,7 +806,7 @@ nav {
 }
 
 .advice-container-mobile {
-    width: 80%;
+    width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -830,8 +830,23 @@ nav {
 
 h2.mobile {
     font-family: "Caladea", serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 400;
     font-style: normal;
     color: black;
+}
+
+.contact-mobile {
+    margin: 9px auto;
+    font-size: 0.9em;
+    display: flex;
+    text-align: center;
+}
+
+blockquote.mobile {
+  background: white;
+  padding: 20px 30px 20px 30px;
+  margin: 50px auto;
+  width: 70%;
+  max-width: 800px;
 }

@@ -15,14 +15,14 @@
     <span>
     {% if graduate.pronouns %}
     <ion-icon name="person" style="font-size: 1.2em; vertical-align: middle;"></ion-icon> {{ graduate.pronouns }}
-        &nbsp;&nbsp;&nbsp;|
+        &nbsp;&nbsp;|
     {% endif %}
-      &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;
     {% if graduate.city %}
     <ion-icon name="earth" style="color: black; font-size: 1.2em; vertical-align: middle"></ion-icon> {{ graduate.city }}
-        &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;|
     {% endif %}
-     | &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;
     {% if graduate.industry %}
         <ion-icon name="briefcase" style="font-size: 1.2em; vertical-align: middle;"></ion-icon> Working in: {{ graduate.industry }}
     {% endif %}
@@ -30,7 +30,7 @@
     </span>
 
     {% if graduate.contact %}
-    <p class="contact-new"><ion-icon name="chatbubbles" style="font-size: 1.2em; vertical-align: middle;"></ion-icon> {{ graduate.contact }}</p>
+    <p class="contact-mobile"><ion-icon name="chatbubbles" style="font-size: 1.2em; vertical-align: middle;"></ion-icon> {{ graduate.contact }}</p>
     {% endif %}
     </div>
 
@@ -109,7 +109,7 @@
     <div class="advice-container-mobile">
     {% if graduate.q10 %}
         <div class="wrapper-new">
-        <blockquote class="stacked-new">
+        <blockquote class="stacked-new mobile">
             <p>{{ graduate.q10 }}</p>
         </blockquote>
         </div>
