@@ -28,7 +28,7 @@ def index(request):
             grads.append((grad, f'photos/Headshots/Final/{file_name}.jpg'))
     user_agent = request.META.get('HTTP_USER_AGENT', '').lower()
     if 'mobile' in user_agent or 'iphone' in user_agent or 'android' in user_agent:
-        template_name = "network/index2_mobile.html"
+        template_name = "network/index2-mobile.html"
     else:
         template_name = "network/index2.html"
     return render(request, template_name, {
