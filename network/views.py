@@ -26,8 +26,12 @@ def index(request):
         else:
             file_name = grad.name.replace(' ', '-')
             grads.append((grad, f'photos/Headshots/Final/{file_name}.jpg'))
-
-    return render(request, 'network/index2.html', {
+    user_agent = request.META.get('HTTP_USER_AGENT', '').lower()
+    if 'mobile' in user_agent or 'iphone' in user_agent or 'android' in user_agent:
+        template_name = "network/index2_mobile.html"
+    else:
+        template_name = "network/index2.html"
+    return render(request, template_name, {
         #"posts": [post.serialize(request.user) for post in page_obj.object_list],
         #"page": page_obj.number,
         #"has_next": page_obj.has_next(),
